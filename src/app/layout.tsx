@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Google_Sans_Flex } from "next/font/google";
+import { Google_Sans_Flex, Gluten } from "next/font/google";
 import "./globals.css";
 
 const googleSansFlex = Google_Sans_Flex({
   variable: "--font-google-sans-flex",
+  subsets: ["latin"],
+});
+
+const gluten = Gluten({
+  variable: "--font-gluten",
   subsets: ["latin"],
 });
 
@@ -21,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body
-        className={` ${googleSansFlex.variable} antialiased`}
+        className={`${googleSansFlex.variable} ${gluten.variable} font-sans antialiased`}
       >
         {children}
       </body>
