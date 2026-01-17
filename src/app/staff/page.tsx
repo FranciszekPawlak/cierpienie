@@ -30,7 +30,7 @@ export default function StaffPage() {
 
             <h1 className="text-lg tracking-tight">
               <span className="bg-linear-to-r from-white to-neutral-400 bg-clip-text font-black text-transparent">
-                Ciierpienie
+                Cierpienie
               </span>
               <span className="ml-1 font-thin text-green-400">STAFF</span>
             </h1>
