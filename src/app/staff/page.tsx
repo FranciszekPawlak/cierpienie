@@ -5,36 +5,69 @@ export default function StaffPage() {
   return (
     <main className="min-h-screen px-6 selection:bg-green-500/30 selection:text-green-200">
       <header>
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="group flex items-center gap-2 text-neutral-400 transition-colors duration-200 hover:text-white"
-          >
-            <svg
-              className="group-hover:-translate-x-1 h-5 w-5 transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-4 lg:px-8">
+          <div className="flex items-center justify-between sm:hidden">
+            <Link
+              href="/"
+              className="group flex items-center gap-2 text-neutral-400 transition-colors duration-200 hover:text-white"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            <span className="font-medium text-sm">Powrót</span>
-          </Link>
+              <svg
+                className="group-hover:-translate-x-1 h-5 w-5 transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                />
+              </svg>
+              <span className="font-medium text-sm">Powrót</span>
+            </Link>
 
-          <h1 className="text-lg tracking-tight">
-            <span className="bg-linear-to-r from-white to-neutral-400 bg-clip-text font-black text-transparent">
-              Ciierpienie
-            </span>
-            <span className="ml-1 font-thin text-green-400">STAFF</span>
-          </h1>
+            <h1 className="text-lg tracking-tight">
+              <span className="bg-linear-to-r from-white to-neutral-400 bg-clip-text font-black text-transparent">
+                Ciierpienie
+              </span>
+              <span className="ml-1 font-thin text-green-400">STAFF</span>
+            </h1>
+          </div>
 
-          <div className="w-20" />
+          {/* Desktop: horizontal layout */}
+          <div className="hidden items-center justify-between sm:flex">
+            <Link
+              href="/"
+              className="group flex items-center gap-2 text-neutral-400 transition-colors duration-200 hover:text-white"
+            >
+              <svg
+                className="group-hover:-translate-x-1 h-5 w-5 transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                />
+              </svg>
+              <span className="font-medium text-sm">Powrót</span>
+            </Link>
+
+            <h1 className="text-lg tracking-tight">
+              <span className="bg-linear-to-r from-white to-neutral-400 bg-clip-text font-black text-transparent">
+                Ciierpienie
+              </span>
+              <span className="ml-1 font-thin text-green-400">STAFF</span>
+            </h1>
+
+            <div className="w-20" />
+          </div>
         </div>
       </header>
 
