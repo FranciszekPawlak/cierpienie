@@ -21,13 +21,20 @@ const socialLinks = [
       />
     ),
   },
+  {
+    name: "X",
+    href: "https://x.com/cierpienie_club",
+    icon: (
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    ),
+  },
 ];
 
 export function SocialSection() {
   return (
-    <section className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-16">
+    <section className="relative flex min-h-screen flex-col items-center justify-center px-4 py-16">
       <div
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-green-500/5 blur-[150px]"
+        className="-translate-x-1/2 -translate-y-1/2 pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] rounded-full bg-green-500/5 blur-[150px]"
         aria-hidden="true"
       />
       <div
@@ -35,14 +42,14 @@ export function SocialSection() {
         aria-hidden="true"
       />
 
-      <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl animate-blur-in">
+      <h2 className="mb-6 animate-blur-in font-bold text-3xl text-white tracking-tight sm:text-4xl md:text-5xl">
         <span className="bg-linear-to-r from-white via-neutral-300 to-neutral-500 bg-clip-text text-transparent">
           Śledź nas
         </span>
       </h2>
 
       <p
-        className="mb-16 max-w-md text-center text-lg text-neutral-400 animate-fade-in-up sm:text-xl"
+        className="mb-16 max-w-md animate-fade-in-up text-center text-lg text-neutral-400 sm:text-xl"
         style={{ animationDelay: "0.1s" }}
       >
         Bądź na bieżąco z naszymi aktualnościami
@@ -55,7 +62,7 @@ export function SocialSection() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex flex-col items-center gap-6 animate-fade-in-up"
+            className="group relative flex animate-fade-in-up flex-col items-center gap-6"
             style={{
               animationDelay: `${0.2 + index * 0.15}s`,
               animationFillMode: "both",
@@ -64,13 +71,13 @@ export function SocialSection() {
           >
             <div className="relative">
               <div
-                className="absolute inset-0 rounded-3xl bg-green-500/20 blur-2xl opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:blur-3xl"
+                className="absolute inset-0 rounded-3xl bg-green-500/20 opacity-0 blur-2xl transition-all duration-500 group-hover:opacity-100 group-hover:blur-3xl"
                 aria-hidden="true"
               />
 
-              <div className="relative flex h-32 w-32 items-center justify-center rounded-3xl border border-neutral-700/50 bg-neutral-900/80 backdrop-blur-sm shadow-2xl transition-all duration-500 group-hover:border-green-500/40 group-hover:bg-neutral-800/80 group-hover:scale-110 sm:h-40 sm:w-40 md:h-48 md:w-48">
+              <div className="relative flex h-32 w-32 items-center justify-center rounded-3xl border border-neutral-700/50 bg-neutral-900/80 shadow-2xl backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:border-green-500/40 group-hover:bg-neutral-800/80 sm:h-40 sm:w-40 md:h-48 md:w-48">
                 <svg
-                  className="h-16 w-16 text-neutral-400 transition-all duration-500 group-hover:text-green-400 group-hover:scale-110 sm:h-20 sm:w-20 md:h-24 md:w-24"
+                  className="h-16 w-16 text-neutral-400 transition-all duration-500 group-hover:scale-110 group-hover:text-green-400 sm:h-20 sm:w-20 md:h-24 md:w-24"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -83,14 +90,9 @@ export function SocialSection() {
                   aria-hidden="true"
                 />
               </div>
-
-              <div
-                className="absolute -inset-2 rounded-3xl border border-neutral-700/20 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:-inset-3 group-hover:border-green-500/20"
-                aria-hidden="true"
-              />
             </div>
 
-            <span className="text-xl font-semibold tracking-wide text-neutral-300 transition-colors duration-300 group-hover:text-white sm:text-2xl">
+            <span className="font-semibold text-neutral-300 text-xl tracking-wide transition-colors duration-300 group-hover:text-white sm:text-2xl">
               {social.name}
             </span>
           </a>

@@ -27,7 +27,9 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
       console.error("CRITICAL: RECAPTCHA_SECRET_KEY not set in production");
       return false;
     }
-    console.warn("RECAPTCHA_SECRET_KEY not set, skipping verification in development");
+    console.warn(
+      "RECAPTCHA_SECRET_KEY not set, skipping verification in development",
+    );
     return true;
   }
 
@@ -48,7 +50,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         body: params.toString(),
-      }
+      },
     );
 
     const data: RecaptchaResponse = await response.json();
@@ -76,11 +78,14 @@ function isValidEmail(email: string): boolean {
   if (email.length > MAX_EMAIL_LENGTH) {
     return false;
   }
-  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+  const emailRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
   return emailRegex.test(email);
 }
 
-async function addToBrevo(email: string): Promise<{ success: boolean; error?: string }> {
+async function addToBrevo(
+  email: string,
+): Promise<{ success: boolean; error?: string }> {
   const apiKey = process.env.BREVO_API_KEY;
   const listId = process.env.BREVO_LIST_ID;
 
@@ -89,7 +94,9 @@ async function addToBrevo(email: string): Promise<{ success: boolean; error?: st
       console.error("CRITICAL: BREVO_API_KEY not set in production");
       return { success: false, error: "Błąd konfiguracji serwera" };
     }
-    console.warn("BREVO_API_KEY not set, skipping Brevo integration in development");
+    console.warn(
+      "BREVO_API_KEY not set, skipping Brevo integration in development",
+    );
     return { success: true };
   }
 
@@ -148,7 +155,7 @@ export async function POST(request: Request) {
     if (!email || !isValidEmail(email)) {
       return NextResponse.json(
         { error: "Podaj prawidłowy adres email" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -156,7 +163,7 @@ export async function POST(request: Request) {
     if (!isHuman) {
       return NextResponse.json(
         { error: "Weryfikacja nie powiodła się. Spróbuj ponownie." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -164,19 +171,19 @@ export async function POST(request: Request) {
     if (!brevoResult.success) {
       return NextResponse.json(
         { error: brevoResult.error || "Nie udało się zapisać do newslettera" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     return NextResponse.json(
       { message: "Zapisano do newslettera!" },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error("Newsletter API error:", error);
     return NextResponse.json(
       { error: "Wystąpił nieoczekiwany błąd" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

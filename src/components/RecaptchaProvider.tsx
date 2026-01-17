@@ -1,16 +1,20 @@
 "use client";
 
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import type { ReactNode } from "react";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 export function RecaptchaProvider({ children }: { children: ReactNode }) {
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   if (!siteKey) {
     if (process.env.NODE_ENV === "production") {
-      console.error("CRITICAL: NEXT_PUBLIC_RECAPTCHA_SITE_KEY not set in production");
+      console.error(
+        "CRITICAL: NEXT_PUBLIC_RECAPTCHA_SITE_KEY not set in production",
+      );
     } else {
-      console.warn("NEXT_PUBLIC_RECAPTCHA_SITE_KEY not set, reCAPTCHA disabled in development");
+      console.warn(
+        "NEXT_PUBLIC_RECAPTCHA_SITE_KEY not set, reCAPTCHA disabled in development",
+      );
     }
     return <>{children}</>;
   }

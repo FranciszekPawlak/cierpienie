@@ -87,3 +87,8 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+.rc-anchor,
+.grecaptcha-badge {
+  visibility: hidden !important;
+}

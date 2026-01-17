@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -61,13 +61,13 @@ export function NewsletterForm() {
       } catch (error) {
         setStatus("error");
         setErrorMessage(
-          error instanceof Error ? error.message : "Wystąpił błąd"
+          error instanceof Error ? error.message : "Wystąpił błąd",
         );
       } finally {
         isSubmittingRef.current = false;
       }
     },
-    [email, executeRecaptcha]
+    [email, executeRecaptcha],
   );
 
   const handleRetry = useCallback(() => {
@@ -77,7 +77,7 @@ export function NewsletterForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center gap-3 animate-fade-in-up">
+      <div className="flex animate-fade-in-up flex-col items-center gap-3">
         <div className="flex h-12 w-12 items-center justify-center rounded-full border border-green-500/30 bg-green-500/10">
           <svg
             className="h-6 w-6 text-green-400"
@@ -94,10 +94,8 @@ export function NewsletterForm() {
             />
           </svg>
         </div>
-        <p className="text-center text-neutral-300">
-          Dziękujemy za zapis!
-        </p>
-        <p className="text-center text-sm text-neutral-500">
+        <p className="text-center text-neutral-300">Dziękujemy za zapis!</p>
+        <p className="text-center text-neutral-500 text-sm">
           Powiadomimy Cię o starcie.
         </p>
       </div>
@@ -109,7 +107,7 @@ export function NewsletterForm() {
       <div className="relative">
         <div className="group relative">
           <div
-            className="absolute -inset-0.5 rounded-full bg-green-500/20 opacity-0 blur transition-opacity duration-300 group-focus-within:opacity-100"
+            className="-inset-0.5 absolute rounded-full bg-green-500/20 opacity-0 blur transition-opacity duration-300 group-focus-within:opacity-100"
             aria-hidden="true"
           />
 
@@ -144,7 +142,7 @@ export function NewsletterForm() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="mr-1.5 flex items-center gap-2 rounded-full bg-green-600 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-neutral-900 disabled:cursor-not-allowed disabled:opacity-50 sm:px-5"
+              className="mr-1.5 flex items-center gap-2 whitespace-nowrap rounded-full bg-green-600 px-4 py-2 font-medium text-sm text-white transition-all duration-300 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-neutral-900 disabled:cursor-not-allowed disabled:opacity-50 sm:px-5"
             >
               {status === "loading" ? (
                 <>
@@ -194,20 +192,39 @@ export function NewsletterForm() {
         </div>
 
         {status === "error" && errorMessage && (
-          <div className="mt-2 flex flex-col items-center gap-1 animate-fade-in-up">
-            <p className="text-center text-sm text-red-400">
-              {errorMessage}
-            </p>
+          <div className="mt-2 flex animate-fade-in-up flex-col items-center gap-1">
+            <p className="text-center text-red-400 text-sm">{errorMessage}</p>
             <button
               type="button"
               onClick={handleRetry}
-              className="text-xs text-neutral-400 hover:text-neutral-300 underline transition-colors"
+              className="text-neutral-400 text-xs underline transition-colors hover:text-neutral-300"
             >
               Spróbuj ponownie
             </button>
           </div>
         )}
       </div>
+
+      <p className="mt-3 text-center text-neutral-600 text-xs">
+        Chronione przez reCAPTCHA.{" "}
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-neutral-500"
+        >
+          Prywatność
+        </a>
+        {" · "}
+        <a
+          href="https://policies.google.com/terms"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-neutral-500"
+        >
+          Warunki
+        </a>
+      </p>
     </form>
   );
 }

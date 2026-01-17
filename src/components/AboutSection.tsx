@@ -1,8 +1,8 @@
 export function AboutSection() {
   return (
-    <section className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-24">
+    <section className="relative flex min-h-screen flex-col items-center justify-center px-4 py-24">
       <div
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-green-500/6 blur-[120px]"
+        className="-translate-x-1/2 -translate-y-1/2 pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[500px] rounded-full bg-green-500/6 blur-[120px]"
         aria-hidden="true"
       />
       <div
@@ -11,24 +11,25 @@ export function AboutSection() {
       />
 
       <p
-        className="max-w-3xl text-center text-xl leading-relaxed text-neutral-300 mb-8 animate-fade-in-up sm:text-2xl"
+        className="mb-8 max-w-3xl animate-fade-in-up text-center text-neutral-300 text-xl leading-relaxed sm:text-2xl"
         style={{ animationDelay: "0.15s" }}
       >
-        <span className="font-black text-white">Cierpienie</span> to
-        inicjatywa sportowa dla młodych ludzi, której misją jest skupianie osób
-        lubiących aktywny tryb życia i pracę nad własnymi słabościami.
-        Organizujemy wydarzenia, na których możemy{" "}
+        <span className="font-black text-white">Cierpienie</span> to inicjatywa
+        sportowa dla młodych ludzi, której misją jest skupianie osób lubiących
+        aktywny tryb życia i pracę nad własnymi słabościami. Organizujemy
+        wydarzenia, na których możemy{" "}
         <span className="text-green-400">celebrować sport</span>.
       </p>
 
       <div
-        className="flex flex-col items-center gap-4 animate-fade-in-up"
+        className="flex animate-fade-in-up flex-col items-center gap-4"
         style={{ animationDelay: "0.25s" }}
       >
         {[
           "Nie masz jeszcze 35 lat?",
           "Stoicyzm nie jest Ci obcy?",
           "Lubisz sober morning matcha labubu rave'y?",
+          "Cierpienie sprawia Ci przyjemność?",
         ].map((question) => (
           <div
             key={question}
@@ -46,12 +47,12 @@ export function AboutSection() {
         className="mt-12 animate-fade-in-up"
         style={{ animationDelay: "0.6s" }}
       >
-        <div className="relative group">
+        <div className="group relative">
           <div
             className="absolute inset-0 rounded-full bg-green-500/20 blur-xl transition-all duration-500 group-hover:bg-green-500/30"
             aria-hidden="true"
           />
-          <p className="relative rounded-full border border-green-500/30 bg-green-500/10 px-6 py-3 text-base font-bold tracking-wide text-green-400 transition-all duration-300 hover:border-green-500/50 hover:bg-green-500/15 sm:text-lg">
+          <p className="relative rounded-full border border-green-500/30 bg-green-500/10 px-6 py-3 font-bold text-base text-green-400 tracking-wide transition-all duration-300 hover:border-green-500/50 hover:bg-green-500/15 sm:text-lg">
             MUSISZ WPAŚĆ DO NAS NA EVENT
           </p>
         </div>
