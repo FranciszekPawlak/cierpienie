@@ -9,12 +9,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-google-sans-flex);
-  --font-gluten: var(--font-gluten);
 
   --animate-fade-in-up: fadeInUp 1s ease-out both;
   --animate-blur-in: blurIn 1s ease-out both;
-  --animate-wiggle: wiggle 3s ease-in-out infinite;
-  --animate-expand-width: expandWidth 1s ease-in-out both;
   --animate-aurora: aurora 10s linear infinite;
   --animate-float: float 8s ease-in-out infinite;
 
@@ -63,37 +60,6 @@
       opacity: 1;
       filter: blur(0);
       transform: translateY(0);
-    }
-  }
-
-  @keyframes wiggle {
-    0%,
-    100% {
-      transform: rotate(0deg);
-    }
-    10% {
-      transform: rotate(10deg);
-    }
-    20% {
-      transform: rotate(-10deg);
-    }
-    30% {
-      transform: rotate(5deg);
-    }
-    40% {
-      transform: rotate(-5deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-  }
-
-  @keyframes expandWidth {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
     }
   }
 

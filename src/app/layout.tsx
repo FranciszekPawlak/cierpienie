@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-import { Google_Sans_Flex, Gluten } from "next/font/google";
+import { Google_Sans_Flex } from "next/font/google";
+import { RecaptchaProvider } from "@/components/RecaptchaProvider";
 import "./globals.css";
 
 const googleSansFlex = Google_Sans_Flex({
   variable: "--font-google-sans-flex",
-  subsets: ["latin"],
-});
-
-const gluten = Gluten({
-  variable: "--font-gluten",
   subsets: ["latin"],
 });
 
@@ -26,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body
-        className={`${googleSansFlex.variable} ${gluten.variable} font-sans antialiased`}
+        className={`${googleSansFlex.variable} font-sans antialiased`}
       >
-        {children}
+        <RecaptchaProvider>{children}</RecaptchaProvider>
       </body>
     </html>
   );
