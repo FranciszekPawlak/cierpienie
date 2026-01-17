@@ -9,7 +9,7 @@ import { TeamSection } from "@/components/TeamSection";
 
 export default function Home() {
   return (
-    <main className="selection:bg-green-500/30 selection:text-green-200">
+    <main className="px-6 selection:bg-green-500/30 selection:text-green-200">
       <HeroSection />
       <SectionDivider variant="green" />
       <LaunchSection />
@@ -23,7 +23,6 @@ export default function Home() {
       <SponsorsSection />
       <SectionDivider variant="green" />
       <StaffSection />
-
     </main>
   );
 }

@@ -1,26 +1,18 @@
 import Link from "next/link";
+import { GlowEffect } from "./GlowEffect";
+import { StatusBadge } from "./StatusBadge";
 
 export function StaffSection() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-4 py-24">
-      {/* Background effects */}
-      <div
-        className="-translate-x-1/2 -translate-y-1/2 pointer-events-none absolute top-1/2 left-1/2 h-[400px] w-[400px] rounded-full bg-green-500/5 blur-[120px]"
-        aria-hidden="true"
+    <section className="relative flex min-h-screen flex-col items-center justify-center py-24">
+      <GlowEffect
+        size="md"
+        position="center"
+        blur="md"
+        className="bg-green-500/5"
       />
 
-      <div
-        className="mb-4 inline-flex animate-fade-in-up items-center gap-2 rounded-full border border-green-500/20 bg-green-500/5 px-4 py-2"
-        style={{ animationDelay: "0.1s" }}
-      >
-        <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-        </span>
-        <span className="font-medium text-green-400 text-sm tracking-wide">
-          Wkrótce
-        </span>
-      </div>
+      <StatusBadge text="Wkrótce" />
 
       <h2 className="mt-4 mb-6 animate-blur-in text-center text-4xl tracking-tight sm:text-5xl md:text-6xl">
         <span className="font-thin text-green-500">STAFF</span>
@@ -42,7 +34,6 @@ export function StaffSection() {
         className="group relative mt-8 inline-flex animate-fade-in-up items-center gap-3"
         style={{ animationDelay: "0.25s" }}
       >
-        {/* Glow effect */}
         <div
           className="absolute inset-0 rounded-full bg-green-500/20 blur-xl transition-all duration-500 group-hover:bg-green-500/30 group-hover:blur-2xl"
           aria-hidden="true"

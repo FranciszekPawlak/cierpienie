@@ -27,7 +27,6 @@ export function BackgroundEffects() {
       className="-z-10 pointer-events-none fixed inset-0 overflow-hidden"
       aria-hidden="true"
     >
-      {/* Mouse follower */}
       <div
         className="-left-32 -top-32 absolute h-64 w-64 rounded-full bg-green-500/10 blur-[80px] transition-transform duration-100 ease-out will-change-transform"
         style={{

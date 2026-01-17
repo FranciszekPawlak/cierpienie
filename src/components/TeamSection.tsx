@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { GlowEffect } from "./GlowEffect";
+import { GradientHeading } from "./GradientHeading";
 
 const teamMembers = [
   {
@@ -23,17 +25,15 @@ const teamMembers = [
 
 export function TeamSection() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-4 py-16">
-      <div
-        className="-translate-x-1/2 -translate-y-1/2 pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[500px] rounded-full bg-green-500/5 blur-[120px]"
-        aria-hidden="true"
+    <section className="relative flex min-h-screen flex-col items-center justify-center py-16">
+      <GlowEffect
+        size="md"
+        position="center"
+        blur="md"
+        className="h-[500px] w-[500px] bg-green-500/5"
       />
 
-      <h2 className="mb-16 animate-blur-in font-bold text-3xl text-white tracking-tight sm:text-4xl md:text-5xl">
-        <span className="bg-linear-to-r from-white via-neutral-300 to-neutral-500 bg-clip-text text-transparent">
-          Nasz zespół
-        </span>
-      </h2>
+      <GradientHeading className="mb-16">Nasz zespół</GradientHeading>
 
       <div className="flex flex-col items-center gap-12 md:flex-row md:gap-16 lg:gap-24">
         {teamMembers.map((member, index) => (

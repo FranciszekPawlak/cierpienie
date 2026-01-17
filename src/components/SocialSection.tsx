@@ -1,3 +1,6 @@
+import { GlowEffect } from "./GlowEffect";
+import { GradientHeading } from "./GradientHeading";
+
 const socialLinks = [
   {
     name: "Instagram",
@@ -32,21 +35,22 @@ const socialLinks = [
 
 export function SocialSection() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-4 py-16">
-      <div
-        className="-translate-x-1/2 -translate-y-1/2 pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] rounded-full bg-green-500/5 blur-[150px]"
-        aria-hidden="true"
+    <section className="relative flex min-h-screen flex-col items-center justify-center py-16">
+      <GlowEffect
+        size="lg"
+        position="center"
+        blur="lg"
+        className="bg-green-500/5"
       />
-      <div
-        className="pointer-events-none absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-emerald-500/5 blur-[120px]"
-        aria-hidden="true"
+      <GlowEffect
+        size="md"
+        color="emerald"
+        position="bottom-right"
+        blur="md"
+        className="bg-emerald-500/5"
       />
 
-      <h2 className="mb-6 animate-blur-in font-bold text-3xl text-white tracking-tight sm:text-4xl md:text-5xl">
-        <span className="bg-linear-to-r from-white via-neutral-300 to-neutral-500 bg-clip-text text-transparent">
-          Śledź nas
-        </span>
-      </h2>
+      <GradientHeading className="mb-6">Śledź nas</GradientHeading>
 
       <p
         className="mb-16 max-w-md animate-fade-in-up text-center text-lg text-neutral-400 sm:text-xl"

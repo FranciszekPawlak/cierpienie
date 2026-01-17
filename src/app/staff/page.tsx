@@ -1,9 +1,9 @@
 import Link from "next/link";
+import { StatusBadge } from "@/components/StatusBadge";
 
 export default function StaffPage() {
   return (
-    <main className="min-h-screen selection:bg-green-500/30 selection:text-green-200">
-      {/* Header */}
+    <main className="min-h-screen px-6 selection:bg-green-500/30 selection:text-green-200">
       <header>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <Link
@@ -34,25 +34,12 @@ export default function StaffPage() {
             <span className="ml-1 font-thin text-green-400">STAFF</span>
           </h1>
 
-          {/* Placeholder for symmetry */}
           <div className="w-20" />
         </div>
       </header>
 
-      {/* Main content */}
-      <section className="flex min-h-[calc(100vh-73px)] flex-col items-center justify-center px-4 py-16">
-        <div
-          className="mb-6 inline-flex animate-fade-in-up items-center gap-2 rounded-full border border-green-500/20 bg-green-500/5 px-4 py-2"
-          style={{ animationDelay: "0.1s" }}
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-          </span>
-          <span className="font-medium text-green-400 text-sm tracking-wide">
-            Wkrótce
-          </span>
-        </div>
+      <section className="flex min-h-[calc(100vh-73px)] flex-col items-center justify-center py-16">
+        <StatusBadge text="Wkrótce" />
 
         <h2 className="mb-6 animate-blur-in text-center text-4xl tracking-tight sm:text-5xl md:text-6xl">
           <span className="font-thin text-green-500">STAFF</span>
@@ -107,7 +94,6 @@ export default function StaffPage() {
           </ul>
         </div>
 
-        {/* CTA */}
         <div
           className="mt-12 flex animate-fade-in-up flex-col items-center gap-4"
           style={{ animationDelay: "0.35s" }}
