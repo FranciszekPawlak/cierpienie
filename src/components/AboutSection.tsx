@@ -42,7 +42,7 @@ export function AboutSection() {
             key={question}
             className="rounded-lg border border-neutral-800/50 bg-neutral-900/30 px-4 py-2 backdrop-blur-sm transition-all duration-300 hover:border-green-500/20 hover:bg-neutral-800/30"
           >
-            <span className="text-center text-base text-neutral-300 sm:text-lg">
+            <span className="inline-block text-center text-base text-neutral-300 sm:text-lg">
               {question}
             </span>
           </div>
