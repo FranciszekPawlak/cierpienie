@@ -28,7 +28,7 @@ export function SponsorsSection() {
       >
         Chcesz wesprzeć{" "}
         <span className="font-black text-green-500">Cierpienie</span>? Napisz do
-        nas! Władujemy tu Twoje logo.
+        nas na <b>box@cierpienie.club</b>! Władujemy tu Twoje logo.
       </p>
 
       <div
