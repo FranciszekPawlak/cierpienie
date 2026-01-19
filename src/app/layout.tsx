@@ -11,7 +11,30 @@ const googleSansFlex = Google_Sans_Flex({
 
 export const metadata: Metadata = {
   title: "Cierpienie",
-  description: "Cierpienie",
+  description: "cierpienie.club",
+  metadataBase: new URL("https://cierpienie.club"),
+  openGraph: {
+    title: "Cierpienie",
+    description: "cierpienie.club",
+    url: "https://cierpienie.club",
+    siteName: "Cierpienie",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Cierpienie Logo",
+      },
+    ],
+    locale: "pl_PL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cierpienie",
+    description: "cierpienie.club",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
